@@ -47,8 +47,14 @@ public class PlayerMovement : MonoBehaviour
 	private Transform CamTransform;
 	private float camRotation = 0f;
 	#endregion
+
+	private DrunkManager dm;
 	private void Start()
 	{
+		if (dm == null)
+		{
+			dm = FindFirstObjectByType<DrunkManager>();
+		}
 		//Initialzes the heldItem, stamina, Character Controller, and camera
 		lastHit = this.gameObject;
 		staminaLeft = MAX_STAMINA;
@@ -62,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		//Moves our character controller
 		Vector3 movement = Vector3.zero;
-		float forwardMovement = Input.GetAxis("Vertical") * moveSpeed * speedMultiplier * Time.deltaTime;
-		float sideMovement = Input.GetAxis("Horizontal") * moveSpeed * speedMultiplier * Time.deltaTime;
+		float forwardMovement = Input.GetAxis("Vertical") * moveSpeed * Mathf.Clamp((speedMultiplier-(dm.GetDrunkness())),0.2f,sprintMultipier) * Time.deltaTime;
+		float sideMovement = Input.GetAxis("Horizontal") * moveSpeed * Mathf.Clamp((speedMultiplier-(dm.GetDrunkness())),0.2f,sprintMultipier) * Time.deltaTime;
 		movement += (transform.forward * forwardMovement) + (transform.right * sideMovement);
 
 		//Vertical stuff isnt really doing much rn but is probably good to keep if we add slopes
