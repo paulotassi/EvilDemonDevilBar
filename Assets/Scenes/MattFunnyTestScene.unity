@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff1c99ee993f05439e55eb1aeb0978b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkIncrement: -0.05
+  drunkIncrement: -0.34
 --- !u!136 &991069238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff1c99ee993f05439e55eb1aeb0978b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkIncrement: 0.1
+  drunkIncrement: 0.34
 --- !u!136 &1978239624
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -924,6 +924,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 93507505320396035, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
+      propertyPath: maxShade
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 93507505320396035, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
+      propertyPath: glassesShade
+      value: 
+      objectReference: {fileID: 2100000, guid: eba40e6e5488a4e4fac958d9492cd5a4, type: 2}
     - target: {fileID: 5116355883128810852, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -964,10 +972,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8076962400602702273, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 439
+    - target: {fileID: 5507700412596520966, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
+      propertyPath: raycastDistance
+      value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 6391240766494695415, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391240766494695415, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eba40e6e5488a4e4fac958d9492cd5a4, type: 2}
     - target: {fileID: 8462774791612834288, guid: 03d66f173720c2a4c942fe54edd36450, type: 3}
       propertyPath: m_Name
       value: Player

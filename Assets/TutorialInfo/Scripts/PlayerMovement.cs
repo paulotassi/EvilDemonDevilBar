@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]private Material outline;
 	private GameObject lastHit;
 	private Material[] defaultMaterials;
+	[SerializeField] private float raycastDistance;
+	private bool needsMaterialReset = false;
 	#endregion
 
 	#region Camera
@@ -129,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 	private void SimpleRaycast()
 	{
 		RaycastHit hit;
-		if (Physics.Raycast(CamTransform.position, CamTransform.forward, out hit))
+		if (Physics.Raycast(CamTransform.position, CamTransform.forward, out hit, raycastDistance))
 		{
 			GameObject hitObject = hit.collider.gameObject;
 			if (hitObject.GetComponent<I_Interactable>()!=null)
@@ -164,9 +166,16 @@ public class PlayerMovement : MonoBehaviour
 					}
 					newMaterials[i] = outline;
 					rend.materials=newMaterials;
+					needsMaterialReset = true;
 				}
 			}
 		}
-
+		else if (needsMaterialReset)
+		{
+			lastHit.GetComponent<Renderer>().materials = defaultMaterials;
+			needsMaterialReset = false;
+			lastHit = gameObject;
+		}
 	}
+	
 }
