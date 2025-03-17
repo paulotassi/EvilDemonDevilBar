@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
@@ -11,18 +12,36 @@ public class DrunkManager : MonoBehaviour
     [SerializeField] private AudioSource monsterSounds;
     [SerializeField] private AudioSource cupSoundSource;
     [SerializeField] private AudioClip drinkingSound;
+    [SerializeField] private bool isPlaying = false;
     private void Start() 
     {
         glasses.color = new Color(glasses.color.r,glasses.color.g,glasses.color.b,drunkness);
     }
     public void ChangeDrunkness(float drunkChange)
     {
-        cupSoundSource.PlayOneShot(drinkingSound);
+        PlayAudioClip(cupSoundSource, drinkingSound);
         drunkness = Mathf.Clamp01(drunkness+drunkChange);
         glasses.color = new Color(glasses.color.r,glasses.color.g,glasses.color.b,drunkness);
         monsterSounds.volume = drunkness;
     }
 
+    public void PlayAudioClip(AudioSource source, AudioClip clip)
+    {
+        if (!isPlaying)
+        {
+            StartCoroutine(PlayAudioCoroutine(source, clip));
+        }
+    }
+    private IEnumerator PlayAudioCoroutine(AudioSource source, AudioClip clip)
+    {
+        isPlaying = true;
+        source.clip = clip;
+        source.Play();
+
+        yield return new WaitForSeconds(clip.length);
+
+        isPlaying = false;
+    }
     public float GetDrunkness()
     {
         return drunkness;
