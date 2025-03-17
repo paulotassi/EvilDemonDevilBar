@@ -9,6 +9,7 @@ public class DrunkManager : MonoBehaviour
     [SerializeField] private Material glassesShade;
     [SerializeField] private float maxShade;
     [SerializeField] private float minShade;
+    [SerializeField] private Animator bartenderAnim;
     [SerializeField] private AudioSource monsterSounds;
     [SerializeField] private AudioSource cupSoundSource;
     [SerializeField] private AudioClip drinkingSound;
@@ -19,17 +20,18 @@ public class DrunkManager : MonoBehaviour
     }
     public void ChangeDrunkness(float drunkChange)
     {
-        PlayAudioClip(cupSoundSource, drinkingSound);
+        PlayTriggerClip(cupSoundSource, drinkingSound, bartenderAnim);
         drunkness = Mathf.Clamp01(drunkness+drunkChange);
         glasses.color = new Color(glasses.color.r,glasses.color.g,glasses.color.b,drunkness);
         monsterSounds.volume = drunkness;
     }
 
-    public void PlayAudioClip(AudioSource source, AudioClip clip)
+    public void PlayTriggerClip(AudioSource source, AudioClip clip, Animator anim)
     {
         if (!isPlaying)
         {
             StartCoroutine(PlayAudioCoroutine(source, clip));
+            StartCoroutine(PlayAnimCoroutine(anim));
         }
     }
     private IEnumerator PlayAudioCoroutine(AudioSource source, AudioClip clip)
@@ -41,6 +43,14 @@ public class DrunkManager : MonoBehaviour
         yield return new WaitForSeconds(clip.length);
 
         isPlaying = false;
+    }
+    private IEnumerator PlayAnimCoroutine(Animator anim)
+    {
+        Debug.Log("trying to trigger pouring animation");
+        anim.SetTrigger("Drink");
+        
+        yield return new WaitForSeconds(1.28f);
+
     }
     public float GetDrunkness()
     {
