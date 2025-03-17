@@ -26,14 +26,15 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Conentration: 0.633
+    - _Conentration: 0.45
     - _NoisScale: 127.3
     - _NoiseAmpl: 0.116
     - _NoiseScaleX: 38.2
-    - _Pattern: 17.34
-    - _sharpen: 1
-    - _size: 0.275
-    m_Colors: []
+    - _Pattern: 24.8
+    - _sharpen: 0.514
+    - _size: 1
+    m_Colors:
+    - _Color: {r: 1, g: 0.0141509175, b: 0.0141509175, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1490262818579314763
