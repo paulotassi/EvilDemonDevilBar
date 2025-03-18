@@ -9,59 +9,80 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.874948
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.3598175
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.31740755
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.31977054
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.17664416
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.8750978
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -18.936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 171.788
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -47.694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a7da88014351b9f44aa3717552015060, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a7da88014351b9f44aa3717552015060, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: -5790127849606739146, guid: a7da88014351b9f44aa3717552015060, type: 3}
     - target: {fileID: -772798723794940250, guid: a7da88014351b9f44aa3717552015060, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ef6826bb3daf589458959e980d5559e7, type: 2}
     - target: {fileID: 919132149155446097, guid: a7da88014351b9f44aa3717552015060, type: 3}
       propertyPath: m_Name
       value: Wooden Goblet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7da88014351b9f44aa3717552015060, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -8315695510981640877, guid: a7da88014351b9f44aa3717552015060, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7da88014351b9f44aa3717552015060, type: 3}
